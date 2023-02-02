@@ -28,5 +28,6 @@ object Codec {
 
   implicit val booleanCodec: Codec[Boolean] = stringCodec.imap(_.toBoolean, _.toString)
 
+  // type class composition
   implicit def boxCodec[A](implicit c: Codec[A]): Codec[Box[A]] = c.imap(Box(_), _.value)
 }
