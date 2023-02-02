@@ -61,9 +61,8 @@ class JsonTest extends AnyFlatSpec with Matchers {
   }
 
   "Circle" should "be serialized into Json object" in {
-    val circle = Shape.Circle(10.5)
-    // TODO: make it contravariant
-    val json = Json.toJson(circle.asInstanceOf[Shape])
+    val circle = Shape.circle(10.5)
+    val json = Json.toJson(circle)
 
     json should be(
       Json.JObject(
@@ -73,9 +72,8 @@ class JsonTest extends AnyFlatSpec with Matchers {
   }
 
   "Rectangle" should "be serialized into Json object" in {
-    val rectangle = Shape.Rectangle(2, 3)
-    // TODO: make it contravariant
-    val json = Json.toJson(rectangle.asInstanceOf[Shape])
+    val rectangle = Shape.rectangle(2, 3)
+    val json = Json.toJson(rectangle)
 
     json should be(
       Json.JObject(
