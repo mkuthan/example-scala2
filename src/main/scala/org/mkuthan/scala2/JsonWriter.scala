@@ -29,14 +29,14 @@ object JsonWriter {
   implicit val shapeWriter: JsonWriter[Shape] =
     new JsonWriter[Shape] {
       override def write(value: Shape): Json = value match {
-          case c: Shape.Circle =>
-            Json.JObject(
-              Map("radius" -> Json.JNumber(c.radius))
-            )
-          case r: Shape.Rectangle =>
-            Json.JObject(
-              Map("a" -> Json.JNumber(r.a), "b" -> Json.JNumber(r.b))
-            )
-        }
+        case c: Shape.Circle =>
+          Json.JObject(
+            Map("radius" -> Json.JNumber(c.radius))
+          )
+        case r: Shape.Rectangle =>
+          Json.JObject(
+            Map("a" -> Json.JNumber(r.a), "b" -> Json.JNumber(r.b))
+          )
+      }
     }
 }
