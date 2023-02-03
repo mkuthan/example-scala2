@@ -5,6 +5,8 @@ lazy val exampleScala = (project in file("."))
   .settings(
     commonSettings,
     libraryDependencies ++= Seq(
+      cats,
+      scalacheck % Test,
       scalatest % Test
     )
   )
